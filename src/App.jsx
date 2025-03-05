@@ -2,7 +2,7 @@ import { Outlet,BrowserRouter,Routes,Route } from 'react-router-dom';
 import { Main } from './pages/main';
 import { AuthProvider } from './data';
 import { Header,Footer } from './components/common';
-import AccountRoutes from './routes';
+import { AccountRoutes } from './routes';
 import './App.css';
 
 const LayOut=()=>{
