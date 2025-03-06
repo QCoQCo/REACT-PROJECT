@@ -4,7 +4,6 @@ import {
 } from "../pages/account";
 
 
-
 const AccountRoutes=()=>{
     return(
         <Routes>
