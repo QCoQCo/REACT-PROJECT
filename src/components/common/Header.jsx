@@ -1,9 +1,30 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import { UserMng } from '../../pages/account';
 
 const Header=()=>{
+    const[managerMD,setManagerMD]=useState(false);
+
+
+    const handleClickUserModal=()=>{
+        setManagerMD(!managerMD);
+    };
+
     return(
-        <header id="header">
-            Header
+        <header className="header">
+            <div className="header-inner">
+                <div className="logo">
+                    <Link to='/'><img src="/assets/images/Ex-logo.png" alt="logo" /></Link>
+                </div>
+                <div className="p-name">
+                    <p><span>TEST MOD</span></p>
+                </div>
+                <div className="md-btn" onClick={handleClickUserModal}>
+                    <img src="/assets/images/user-setting-btn.png" alt="user-manager" />
+                </div>
+            </div>
+            {managerMD&&<UserMng handleClickUserModal={handleClickUserModal}/>}
         </header>
     )
 };
