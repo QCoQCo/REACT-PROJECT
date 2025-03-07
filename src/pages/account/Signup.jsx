@@ -5,7 +5,7 @@ import { AuthContext } from "../../data";
 import './account.css';
 
 
-const Signup=()=>{
+const Signup=({managerMD,handleClickUserModal})=>{
     const navigate=useNavigate();
     const {login}=useContext(AuthContext);
 
@@ -64,6 +64,9 @@ const Signup=()=>{
 
             if(targetUser){
                 login(targetUser);
+                if(managerMD){
+                    handleClickUserModal();
+                }
                 navigate('/');
             }else{
                 matchErrRef.current.textContent='아이디 또는 비밀번호가 일치하지 않습니다.'
@@ -72,10 +75,11 @@ const Signup=()=>{
             console.error('로그인 데이터 로딩 실패 : ', err);
             matchErrRef.current.textContent='로그인 중 오류가 발생했습니다. 다시 시도해주세요.'
         }
+
     };
 
     return (
-        <div className="account">
+        <div className={`account ${managerMD?'MD':''}`}>
             <div className='account-inner'>
                 <h2>반갑습니다.</h2>
                 <div className='input-id mb4'>

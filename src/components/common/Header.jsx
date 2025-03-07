@@ -6,7 +6,6 @@ import { UserMng } from '../../pages/account';
 const Header=()=>{
     const[managerMD,setManagerMD]=useState(false);
 
-
     const handleClickUserModal=()=>{
         setManagerMD(!managerMD);
     };
@@ -24,7 +23,7 @@ const Header=()=>{
                     <img src="/assets/images/user-setting-btn.png" alt="user-manager" />
                 </div>
             </div>
-            {managerMD&&<UserMng handleClickUserModal={handleClickUserModal}/>}
+            {managerMD&&<UserMng managerMD={managerMD}handleClickUserModal={handleClickUserModal}/>}
         </header>
     )
 };
