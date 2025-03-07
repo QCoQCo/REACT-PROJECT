@@ -107,8 +107,8 @@ const Signup=({managerMD,handleClickUserModal})=>{
                     <div className='noti' ref={matchErrRef}></div>
                 </div>
                 <div className='find-btn'>
-                    <p><Link to="/account/find-id">아이디 찾기</Link></p>
-                    <p><Link to="/account/find-pw">비밀번호 찾기</Link></p>
+                    <p><Link to="/account/find-id" onClick={handleClickUserModal}>아이디 찾기</Link></p>
+                    <p><Link to="/account/find-pw" onClick={handleClickUserModal}>비밀번호 찾기</Link></p>
                 </div>
             </div>            
         </div>
