@@ -2,7 +2,7 @@ import { useState,useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const FindId=()=>{
+const FindId=({managerMD,setIdMd,setPwMd})=>{
     const[name,setName]=useState('');
     const[email,setEmail]=useState('');
     const[foundId,setFoundId]=useState('');
@@ -71,7 +71,7 @@ const FindId=()=>{
 
 
     return(
-        <div className="account">
+        <div className={`account ${managerMD?'MD':''}`}>
             <div className="account-inner">
                 <h2>아이디 찾기</h2>
                 <div className='input-name mb4'>
@@ -98,8 +98,11 @@ const FindId=()=>{
                     <button onClick={handleFindID}>아이디 찾기</button>
                 </div>
                 <div className='find-btn'>
-                    <p><Link to="/account/signin">로그인 바로가기</Link></p>
-                    <p><Link to="/account/find-pw">비밀번호 찾기</Link></p>
+                    <p><Link to=""onClick={()=>setIdMd(false)}>로그인 바로가기</Link></p>
+                    <p><Link to=""onClick={()=>{
+                        setIdMd(false);
+                        setPwMd(true);
+                    }}>비밀번호 찾기</Link></p>
                 </div>
                 <div className="result">
                     {foundId&&<p className="found">YOUR ID IS <span>{foundId}</span></p>}

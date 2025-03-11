@@ -2,8 +2,21 @@ import './Gnb.css';
 
 const Gnb=()=>{
     return(
-        <nav id="Gnb">
-            Gnb
+        <nav className="Gnb">
+            <div className="gnb-inner">
+                <div className="main-btn">
+                    <img src="" alt="메인페이지 버튼" />
+                </div>
+                <div className="stop-watch">
+                    <img src="" alt="스탑워치 버튼" />
+                </div>
+                <div className="addToDo">
+                    <img src="" alt="목표추가 버튼" />
+                </div>
+                <div className="setting-btn">
+                    <img src="" alt="세팅버튼" />
+                </div>
+            </div>
         </nav>
     )
 };

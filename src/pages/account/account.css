@@ -81,6 +81,39 @@
 
 /* 모달창 */
 .MD{
-    width: 320px;
-    min-height: 60vh;
+    width: 250px;
+    min-height: 40vh;
+}
+
+.MD input[type="text"],
+.MD input[type="password"] {
+    box-sizing: unset;
+    width: 70%;
+    height: 25px;
+    margin: 0 auto;
+}
+
+.MD .account-inner h2{
+    font-size: 18px;
+}
+
+.account .btn-submit {
+    margin-bottom: 16px;
+    margin: 0 auto;
+}
+
+.MD .btn-submit button {
+    width: 78%;
+    height: 36px;
+}
+
+.account .find-btn{
+    justify-content: center;
+}
+
+@media (min-width:768px){
+
+}
+@media (min-width:370px){
+
 }

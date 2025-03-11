@@ -5,7 +5,7 @@ import { AuthContext } from "../../data";
 import './account.css';
 
 
-const Signup=({managerMD,handleClickUserModal})=>{
+const Signup=({managerMD,setIdMd,setPwMd,handleClickUserModal})=>{
     const navigate=useNavigate();
     const {login}=useContext(AuthContext);
 
@@ -27,6 +27,7 @@ const Signup=({managerMD,handleClickUserModal})=>{
         pwErrRef.current.textContent='';
         setUserPw(e.target.value);
     };
+
 
     const handleSubmit=async()=>{
         // 유효성 검사 
@@ -83,34 +84,38 @@ const Signup=({managerMD,handleClickUserModal})=>{
             <div className='account-inner'>
                 <h2>반갑습니다.</h2>
                 <div className='input-id mb4'>
-                    <input 
-                        type='text' 
-                        placeholder='아이디를 입력해주세요.' 
+                    <input
+                        type='text'
+                        placeholder='아이디를 입력해주세요.'
                         ref={idRef}
                         value={userId}
                         onChange={handleChangId}
-                    />                    
+                    />
                     <div className='noti' ref={idErrRef}></div>
                 </div>
                 <div className='input-pw mb12'>
-                    <input 
-                        type='password' 
-                        placeholder='비밀번호를 입력해주세요.' 
+                    <input
+                        type='password'
+                        placeholder='비밀번호를 입력해주세요.'
                         ref={pwRef}
                         value={userPw}
                         onChange={handleChangPw}
                     />
                     <div className="noti" ref={pwErrRef}></div>
-                </div>                
+                </div>
                 <div className='btn-submit'>
                     <button onClick={handleSubmit}>로그인</button>                    
                     <div className='noti' ref={matchErrRef}></div>
                 </div>
                 <div className='find-btn'>
-                    <p><Link to="/account/find-id" onClick={handleClickUserModal}>아이디 찾기</Link></p>
-                    <p><Link to="/account/find-pw" onClick={handleClickUserModal}>비밀번호 찾기</Link></p>
+                    <p><Link to=""onClick={()=>{
+                        setIdMd(true);
+                    }}>아이디 찾기</Link></p>
+                    <p><Link to=""onClick={()=>{
+                        setPwMd(true);
+                    }}>비밀번호 찾기</Link></p>
                 </div>
-            </div>            
+            </div>
         </div>
     )
 };
